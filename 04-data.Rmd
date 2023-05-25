@@ -1,0 +1,14 @@
+# Base包及函数
+
+R语言内置的函数及包的用法说明.
+
+## 函数
+
+```{r eval=FALSE, echo=TRUE}
+# 设定工作目录
+setwd(pwd)
+# 导入已安装的包地址; eg:
+.libPaths("/data1/Project/Rstudio/projects/R_Library/")
+```
+
+## 包

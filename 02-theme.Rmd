@@ -1,0 +1,162 @@
+# ggplot主题
+
+**ggplot主题使用方法, 如何设定参数.**
+
+## ggplot作图字体及线条单位
+
+pointsize 是绘图点大小，单位是 1/72 英寸，一般情况下不会修改pointsize大小。
+
+1 in = 72 points， 1 in = 25.4mm = 72.27points，1mm = 2.845276 points
+
+1 mm = .pt = 2.845276 points .pt为R语言作图的最小单位。
+
+ggplot2函数用法规定: 字体单位为pt, 线条单位为mm.
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+library(ggplot2)
+.pt
+
+#设置1.5pt线宽, ggplot2中线条宽度单位为mm
+lwd = 1.5/.pt
+lwd
+```
+
+## theme_grey默认参数
+
+```{r 1, eval=FALSE, echo=TRUE}
+
+# ggplot默认主题及默认参数
+theme_grey <- function (base_size = 11, base_family = "", base_line_size = base_size/22, base_rect_size = base_size/22) {
+    half_line <- base_size/2
+    t <- theme(line = element_line(colour = "black", size = base_line_size, linetype = 1, lineend = "butt"), 
+               rect = element_rect(fill = "white", colour = "black", size = base_rect_size, linetype = 1), 
+               text = element_text(family = base_family, face = "plain", colour = "black", size = base_size, lineheight = 0.9, hjust = 0.5, vjust = 0.5, angle = 0, margin = margin(), debug = FALSE), 
+               axis.line = element_blank(), 
+               axis.line.x = NULL, 
+               axis.line.y = NULL, 
+               axis.text = element_text(size = rel(0.8), colour = "grey30"), 
+               axis.text.x = element_text(margin = margin(t = 0.8 * half_line/2), vjust = 1), 
+               axis.text.x.top = element_text(margin = margin(b = 0.8 * half_line/2), vjust = 0), 
+               axis.text.y = element_text(margin = margin(r = 0.8 * half_line/2), hjust = 1), 
+               axis.text.y.right = element_text(margin = margin(l = 0.8 * half_line/2), hjust = 0), 
+               axis.ticks = element_line(colour = "grey20"), 
+               axis.ticks.length = unit(half_line/2, "pt"), axis.ticks.length.x = NULL, 
+               axis.ticks.length.x.top = NULL, axis.ticks.length.x.bottom = NULL, 
+               axis.ticks.length.y = NULL, axis.ticks.length.y.left = NULL, 
+               axis.ticks.length.y.right = NULL, 
+               axis.title.x = element_text(margin = margin(t = half_line/2), vjust = 1), 
+               axis.title.x.top = element_text(margin = margin(b = half_line/2), vjust = 0), 
+               axis.title.y = element_text(angle = 90, margin = margin(r = half_line/2), vjust = 1), 
+               axis.title.y.right = element_text(angle = -90, margin = margin(l = half_line/2), vjust = 0), 
+               legend.background = element_rect(colour = NA), 
+               legend.spacing = unit(2 * half_line, "pt"), 
+               legend.spacing.x = NULL, 
+               legend.spacing.y = NULL, 
+               legend.margin = margin(half_line, half_line, half_line, half_line), 
+               legend.key = element_rect(fill = "grey95", colour = NA), 
+               legend.key.size = unit(1.2, "lines"), 
+               legend.key.height = NULL, 
+               legend.key.width = NULL, 
+               legend.text = element_text(size = rel(0.8)), 
+               legend.text.align = NULL, 
+               legend.title = element_text(hjust = 0), 
+               legend.title.align = NULL, 
+               legend.position = "right", 
+               legend.direction = NULL, 
+               legend.justification = "center", 
+               legend.box = NULL, 
+               legend.box.margin = margin(0, 0, 0, 0, "cm"), 
+               legend.box.background = element_blank(), 
+               legend.box.spacing = unit(2 * half_line, "pt"), 
+               panel.background = element_rect(fill = "grey92", colour = NA), 
+               panel.border = element_blank(), 
+               panel.grid = element_line(colour = "white"), 
+               panel.grid.minor = element_line(size = rel(0.5)), 
+               panel.spacing = unit(half_line, "pt"), 
+               panel.spacing.x = NULL, 
+               panel.spacing.y = NULL, 
+               panel.ontop = FALSE, 
+               strip.background = element_rect(fill = "grey85", colour = NA), 
+               strip.text = element_text(colour = "grey10", size = rel(0.8), 
+                                         margin = margin(0.8 * half_line, 0.8 * half_line, 0.8 * half_line, 0.8 * half_line)), 
+               strip.text.x = NULL, strip.text.y = element_text(angle = -90), 
+               strip.text.y.left = element_text(angle = 90), 
+               strip.placement = "inside", 
+               strip.placement.x = NULL, 
+               strip.placement.y = NULL, 
+               strip.switch.pad.grid = unit(half_line/2, "pt"), 
+               strip.switch.pad.wrap = unit(half_line/2, "pt"), 
+               plot.background = element_rect(colour = "white"), 
+               plot.title = element_text(size = rel(1.2), hjust = 0, vjust = 1, margin = margin(b = half_line)), 
+               plot.title.position = "panel", 
+               plot.subtitle = element_text(hjust = 0, vjust = 1, margin = margin(b = half_line)), 
+               plot.caption = element_text(size = rel(0.8), hjust = 1, vjust = 1, margin = margin(t = half_line)), 
+               plot.caption.position = "panel", 
+               plot.tag = element_text(size = rel(1.2), hjust = 0.5, vjust = 0.5), 
+               plot.tag.position = "topleft", 
+               plot.margin = margin(half_line, half_line, half_line, half_line), complete = TRUE)
+    ggplot_global$theme_all_null %+replace% t
+}
+```
+
+## theme_bw默认参数
+
+1.  修改默认字体大小, 默认线条粗细, 默认边框粗细.
+2.  去除作图背景颜色.
+3.  调整主坐标轴, 次坐标轴线条颜色为`grey92`; 次坐标轴线体修改为原来的一半.
+4.  调整图例的背景为白色.
+
+```{r 2,eval=FALSE, echo=TRUE}
+
+# ggplot theme_bw主题调节内容
+theme_bw <- function (base_size = 11, base_family = "", base_line_size = base_size/22, base_rect_size = base_size/22) {
+    theme_grey(base_size = base_size, 
+               base_family = base_family, 
+               base_line_size = base_line_size, base_rect_size = base_rect_size) %+replace% 
+    theme(panel.background = element_rect(fill = "white", colour = NA), 
+          panel.border = element_rect(fill = NA, colour = "grey20"), 
+          panel.grid = element_line(colour = "grey92"), 
+          panel.grid.minor = element_line(size = rel(0.5)), 
+          strip.background = element_rect(fill = "grey85", colour = "grey20"), 
+          legend.key = element_rect(fill = "white", colour = NA), complete = TRUE)
+}
+```
+
+## theme_bw主题修改
+
+1.  坐标轴字体调整为黑色;
+2.  坐标轴线调整为黑色
+
+```{r eval=FALSE, echo=TRUE}
+theme_bw1 <- function (base_size = 11, base_family = "", base_line_size = base_size/22, base_rect_size = base_size/22) 
+{
+    theme_grey(base_size = base_size, 
+               base_family = base_family, 
+               base_line_size = base_line_size, base_rect_size = base_rect_size) %+replace% 
+    theme(panel.background = element_rect(fill = "white", colour = NA), 
+          panel.border = element_rect(fill = NA, colour = "black"), 
+          panel.grid = element_line(colour = "grey92"), 
+          panel.grid.minor = element_line(size = rel(0.5)), 
+          strip.background = element_rect(fill = "grey85", colour = "grey20"), 
+          legend.key = element_rect(fill = "white", colour = NA), complete = TRUE,
+          axis.text = element_text(size = rel(0.8), colour = "black"), )
+}
+# ggplot2函数用法规定: base_size单位为pt, base_line_size和base_rect_size单位为mm.
+# 文章发表字体大小6-12pt, 线条粗细0.5pt ~ 1.5pt, 由于线条单位默认为mm,因此要除以.pt
+
+p + theme_bw1(base_size = 12,base_line_size = 1.5/.pt,base_rect_size = 1.5/.pt)
+```
+
+## 参考
+
+<https://www.cnblogs.com/lmj-sky/p/13353197.html><br>
+<https://zhuanlan.zhihu.com/p/344015507><br>
+<https://www.jianshu.com/p/054107c7aac3><br>
+<https://www.aohuiliu.fun/posts/44687/><br>
+
+## 包版本
+
+```{r echo=FALSE}
+sessionInfo()
+
+```
