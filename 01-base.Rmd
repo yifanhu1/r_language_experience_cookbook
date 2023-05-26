@@ -1,17 +1,51 @@
+---
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
 # Base包及函数
 
 R语言内置的函数及包的用法说明.
 
-## 函数
+## 工作目录设置及导入安装包
 
-```{r 3,eval=FALSE, echo=TRUE}
-# 设定工作目录
+```{r eval=FALSE, echo=TRUE}
+# 设定工作目录, 方便R脚本, 数据, 绘图结果的保存.
 setwd(pwd)
 # 导入已安装的包地址; eg:
 .libPaths("/data1/Project/Rstudio/projects/R_Library/")
+
 ```
 
-## 包版本
+## 内置的文件读取与保存
+
+读取文件和保存文件的考虑内容, 根据不同需求设置不同的参数:
+
+1. 读取及保存的文件名.
+2. 保存的变量名. 
+3. 读取和保存是否包含表头, 行名等. header, col.names,row.names 
+4. 字段是否有引号包围, quote 
+5. 文件的编码方式,fileEncoding 
+6. 文件的分隔符 
+7. 文件是否有注释行, comment.char 
+8. 读取文件的列属性, colClasses
+
+```{r eval=FALSE, echo=TRUE}
+data = read.csv("demo.txt", header = T, sep = "\t", quote = "", fileEncoding = "gbk",colClasses = c("character", "character","character","numeric"))
+#首行为表头
+#分隔符设置
+#字段是否 有""或者''包围, 对于字段中有引号, 建议设置为空, 防止串行
+#colClasses设置列的读取属性, 默认会将字符串类型读取为因子类型, 觉得麻烦可以使用readr包
+
+# 内置的数据保存
+write.table(out, file = "out.xls", sep = "\t", col.names = TRUE, row.names = FALSE, quote = FALSE, na="")
+# quote, 保存的字段是否用引号包围, 建议选FALSE
+# na,对于空值的填充字段, 默认是 "NA"
+# col.names, row.names设置保存行名和列名
+```
+
+**该部分使用的R版本及包版本**
 
 ```{r echo=FALSE}
 sessionInfo()

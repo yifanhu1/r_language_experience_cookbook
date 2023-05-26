@@ -1,0 +1,34 @@
+---
+title: "R语言经验手册"
+author: "Yifan Hu"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+description: |
+  R language experience cookbook
+link-citations: yes
+# github-repo: rstudio/bookdown-demo
+---
+
+# 前言
+
+从研究生开始接触R语言, 加上工作时间, 已经有6年的时间, 从一开始的晦涩难懂到现在的入门进阶, R语言越来越成为数据分析的重要工具. 之前一直有想法去写一些对于R语言的理解, 但是碍于时间和经验的缺乏没能实现. 由于工作的需要, 经常会在python和R语言之间切换, 导致有些相似的语法会经常混乱, 重复查找浪费时间, 因此希望能够把之前的经验编成书籍, 方便查找, 也可以帮助初学者吸取经验. 
+
+其实在很多网页, blog和书籍有很多关于R语言的学习内容, 但是大部分侧重于对参数的描述, 无法直接解决问题, 本书更多的侧重于R语言的实际应用, 不是去罗列函数的各种参数, 各种炫酷技巧, 而是去用实际的经验, 去减少对于重复问题的查找, 帮助新手入门R语言学习者解决最贴近实际的问题. 书籍内容包含绘图, 数据处理, 统计分析, 问题处理等.
+
+本书的侧重点主要在于经验集合, 由于本人水平所限制, 对于统计方法的原理算法并没有很深的探究, 如有错误, 多谢指教.
+
+## 参考内容:
+
+1. <https://www.math.pku.edu.cn/teachers/lidf/docs/Rbook/html/_Rbook/index.html>
+2. <https://ggplot2.tidyverse.org/>
+3. <https://r-graphics.org/>
+
+
+**该部分使用的R版本及包版本**
+
+```{r echo=FALSE}
+sessionInfo()
+
+```

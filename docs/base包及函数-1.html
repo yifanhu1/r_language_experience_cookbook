@@ -5,25 +5,19 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 4 Base包及函数 | R语言经验手册</title>
-  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  <meta name="description" content="R language experience cookbook" />
   <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 4 Base包及函数 | R语言经验手册" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  <meta property="og:description" content="R language experience cookbook" />
   
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Chapter 4 Base包及函数 | R语言经验手册" />
   
-  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  <meta name="twitter:description" content="R language experience cookbook" />
   
 
 <meta name="author" content="Yifan Hu" />
@@ -36,7 +30,7 @@ set in the _output.yml file.</p>" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="ggplot主题.html"/>
+<link rel="prev" href="ggplot主题使用.html"/>
 <link rel="next" href="base包及函数-2.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -138,35 +132,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">A Minimal Book Example</a></li>
+<li><a href="./">R language experience cookbook</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> 说明</a>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> 前言</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#包版本"><i class="fa fa-check"></i><b>1.1</b> 包版本</a></li>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#参考内容"><i class="fa fa-check"></i><b>1.1</b> 参考内容:</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="base包及函数.html"><a href="base包及函数.html"><i class="fa fa-check"></i><b>2</b> Base包及函数</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="base包及函数.html"><a href="base包及函数.html#函数"><i class="fa fa-check"></i><b>2.1</b> 函数</a></li>
-<li class="chapter" data-level="2.2" data-path="base包及函数.html"><a href="base包及函数.html#包版本-1"><i class="fa fa-check"></i><b>2.2</b> 包版本</a></li>
+<li class="chapter" data-level="2.1" data-path="base包及函数.html"><a href="base包及函数.html#工作目录设置及导入安装包"><i class="fa fa-check"></i><b>2.1</b> 工作目录设置及导入安装包</a></li>
+<li class="chapter" data-level="2.2" data-path="base包及函数.html"><a href="base包及函数.html#内置的文件读取与保存"><i class="fa fa-check"></i><b>2.2</b> 内置的文件读取与保存</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="ggplot主题.html"><a href="ggplot主题.html"><i class="fa fa-check"></i><b>3</b> ggplot主题</a>
+<li class="chapter" data-level="3" data-path="ggplot主题使用.html"><a href="ggplot主题使用.html"><i class="fa fa-check"></i><b>3</b> ggplot主题使用</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="ggplot主题.html"><a href="ggplot主题.html#ggplot作图字体及线条单位"><i class="fa fa-check"></i><b>3.1</b> ggplot作图字体及线条单位</a></li>
-<li class="chapter" data-level="3.2" data-path="ggplot主题.html"><a href="ggplot主题.html#theme_grey默认参数"><i class="fa fa-check"></i><b>3.2</b> theme_grey默认参数</a></li>
-<li class="chapter" data-level="3.3" data-path="ggplot主题.html"><a href="ggplot主题.html#theme_bw默认参数"><i class="fa fa-check"></i><b>3.3</b> theme_bw默认参数</a></li>
-<li class="chapter" data-level="3.4" data-path="ggplot主题.html"><a href="ggplot主题.html#theme_bw主题修改"><i class="fa fa-check"></i><b>3.4</b> theme_bw主题修改</a></li>
-<li class="chapter" data-level="3.5" data-path="ggplot主题.html"><a href="ggplot主题.html#参考"><i class="fa fa-check"></i><b>3.5</b> 参考</a></li>
-<li class="chapter" data-level="3.6" data-path="ggplot主题.html"><a href="ggplot主题.html#包版本-2"><i class="fa fa-check"></i><b>3.6</b> 包版本</a></li>
+<li class="chapter" data-level="3.1" data-path="ggplot主题使用.html"><a href="ggplot主题使用.html#ggplot作图字体及线条单位"><i class="fa fa-check"></i><b>3.1</b> ggplot作图字体及线条单位</a></li>
+<li class="chapter" data-level="3.2" data-path="ggplot主题使用.html"><a href="ggplot主题使用.html#theme_grey默认参数"><i class="fa fa-check"></i><b>3.2</b> theme_grey默认参数</a></li>
+<li class="chapter" data-level="3.3" data-path="ggplot主题使用.html"><a href="ggplot主题使用.html#theme_bw默认参数"><i class="fa fa-check"></i><b>3.3</b> theme_bw默认参数</a></li>
+<li class="chapter" data-level="3.4" data-path="ggplot主题使用.html"><a href="ggplot主题使用.html#theme_bw主题修改"><i class="fa fa-check"></i><b>3.4</b> theme_bw主题修改</a></li>
+<li class="chapter" data-level="3.5" data-path="ggplot主题使用.html"><a href="ggplot主题使用.html#参考"><i class="fa fa-check"></i><b>3.5</b> 参考</a></li>
+<li class="chapter" data-level="3.6" data-path="ggplot主题使用.html"><a href="ggplot主题使用.html#包版本"><i class="fa fa-check"></i><b>3.6</b> 包版本</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="base包及函数-1.html"><a href="base包及函数-1.html"><i class="fa fa-check"></i><b>4</b> Base包及函数</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="base包及函数-1.html"><a href="base包及函数-1.html#函数-1"><i class="fa fa-check"></i><b>4.1</b> 函数</a></li>
-<li class="chapter" data-level="4.2" data-path="base包及函数-1.html"><a href="base包及函数-1.html#包版本-3"><i class="fa fa-check"></i><b>4.2</b> 包版本</a></li>
+<li class="chapter" data-level="4.1" data-path="base包及函数-1.html"><a href="base包及函数-1.html#函数"><i class="fa fa-check"></i><b>4.1</b> 函数</a></li>
+<li class="chapter" data-level="4.2" data-path="base包及函数-1.html"><a href="base包及函数-1.html#包版本-1"><i class="fa fa-check"></i><b>4.2</b> 包版本</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="base包及函数-2.html"><a href="base包及函数-2.html"><i class="fa fa-check"></i><b>5</b> Base包及函数</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="base包及函数-2.html"><a href="base包及函数-2.html#函数-2"><i class="fa fa-check"></i><b>5.1</b> 函数</a></li>
+<li class="chapter" data-level="5.1" data-path="base包及函数-2.html"><a href="base包及函数-2.html#函数-1"><i class="fa fa-check"></i><b>5.1</b> 函数</a></li>
 <li class="chapter" data-level="5.2" data-path="base包及函数-2.html"><a href="base包及函数-2.html#包"><i class="fa fa-check"></i><b>5.2</b> 包</a></li>
 </ul></li>
 <li class="divider"></li>
@@ -192,15 +186,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="base包及函数-1" class="section level1 hasAnchor" number="4">
 <h1><span class="header-section-number">Chapter 4</span> Base包及函数<a href="base包及函数-1.html#base包及函数-1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>R语言内置的函数及包的用法说明.</p>
-<div id="函数-1" class="section level2 hasAnchor" number="4.1">
-<h2><span class="header-section-number">4.1</span> 函数<a href="base包及函数-1.html#函数-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="base包及函数-1.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 设定工作目录</span></span>
-<span id="cb12-2"><a href="base包及函数-1.html#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(pwd)</span>
-<span id="cb12-3"><a href="base包及函数-1.html#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 导入已安装的包地址; eg:</span></span>
-<span id="cb12-4"><a href="base包及函数-1.html#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="fu">.libPaths</span>(<span class="st">&quot;/data1/Project/Rstudio/projects/R_Library/&quot;</span>)</span></code></pre></div>
+<div id="函数" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> 函数<a href="base包及函数-1.html#函数" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="base包及函数-1.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 设定工作目录</span></span>
+<span id="cb13-2"><a href="base包及函数-1.html#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(pwd)</span>
+<span id="cb13-3"><a href="base包及函数-1.html#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 导入已安装的包地址; eg:</span></span>
+<span id="cb13-4"><a href="base包及函数-1.html#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">.libPaths</span>(<span class="st">&quot;/data1/Project/Rstudio/projects/R_Library/&quot;</span>)</span></code></pre></div>
 </div>
-<div id="包版本-3" class="section level2 hasAnchor" number="4.2">
-<h2><span class="header-section-number">4.2</span> 包版本<a href="base包及函数-1.html#包版本-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="包版本-1" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> 包版本<a href="base包及函数-1.html#包版本-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <pre><code>## R version 3.6.3 (2020-02-29)
 ## Platform: x86_64-pc-linux-gnu (64-bit)
 ## Running under: Ubuntu 20.04.2 LTS
@@ -243,7 +237,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="ggplot主题.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ggplot主题使用.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="base包及函数-2.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
@@ -275,7 +269,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/03-plot.Rmd",
+"link": "https://github.com/yifanhu1/r_language_experience_cookbook/edit/main/03-plot.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -286,7 +280,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["_main.pdf", "_main.epub"],
+"download": {},
 "search": {
 "engine": "fuse",
 "options": null
