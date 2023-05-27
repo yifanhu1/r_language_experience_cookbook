@@ -1,0 +1,5 @@
+"0","# 按照count降序排序, 直接修改mpg的class因子顺序, 图例也会跟着排序"
+"0","g <- ggplot(mpg %>% mutate(class=fct_infreq(class, ordered=NA)), aes(class)) + "
+"0","  theme_bw1(base_size = 12,base_line_size=1.5/.pt,base_rect_size=1.5/.pt) +"
+"0","  theme(panel.grid = element_blank())"
+"0","g + geom_bar(aes(fct_rev(class)),fill=""black"")"

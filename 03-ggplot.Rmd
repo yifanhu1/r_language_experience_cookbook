@@ -1,0 +1,56 @@
+---
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+# ggplot
+
+ggplot用法: 默认主题均使用theme_bw1
+
+```{r eval=TRUE, echo=TRUE, warning=FALSE, message=FALSE}
+library(tidyverse)
+library(ggplot2)
+library(reshape2)
+library(ggsci)
+
+theme_bw1 <- function (base_size = 11, base_family = "", base_line_size = base_size/22, base_rect_size = base_size/22) 
+{
+    theme_grey(base_size = base_size, 
+               base_family = base_family, 
+               base_line_size = base_line_size, base_rect_size = base_rect_size) %+replace% 
+    theme(panel.background = element_rect(fill = "white", colour = NA), 
+          panel.border = element_rect(fill = NA, colour = "black"), 
+          panel.grid = element_line(colour = "grey92"), 
+          panel.grid.minor = element_line(size = rel(0.5)), 
+          strip.background = element_rect(fill = "grey85", colour = "grey20"), 
+          legend.key = element_rect(fill = "white", colour = NA), complete = TRUE,
+          axis.text = element_text(size = rel(0.8), colour = "black"), )
+}
+
+
+```
+
+## barplot
+
+```{r fig.height=288/96, fig.width=480/96, dpi=300,fig.align="center",out.width="50%", fig.show="hold",fig.cap='geom_bar plot'}
+g <- ggplot(mpg, aes(class)) + 
+  theme_bw1(base_size = 12,base_line_size=1.5/.pt,base_rect_size=1.5/.pt) +
+  theme(panel.grid = element_blank())
+g + geom_bar(fill="black")
+g + geom_bar(aes(fill=class)) + guides(fill="none") + scale_fill_d3()
+# 按照count降序排序, 直接修改mpg的class因子顺序, 图例也会跟着排序
+# fct_infreq根据频率降序排序, fct_rev 反向排序.
+g <- ggplot(mpg %>% mutate(class=fct_infreq(class, ordered=NA)), aes(class)) + 
+  theme_bw1(base_size = 12,base_line_size=1.5/.pt,base_rect_size=1.5/.pt) +
+  theme(panel.grid = element_blank())
+g + geom_bar(aes(fct_rev(class)),fill="black")
+g + geom_bar(aes(fill=class)) + guides(fill="none") + scale_fill_d3()
+```
+
+**该部分使用的R版本及包版本**
+
+```{r echo=FALSE}
+sessionInfo()
+
+```

@@ -1,0 +1,4 @@
+"0","g <- ggplot(mpg, aes(class)) + "
+"0","  theme_bw1(base_size = 12,base_line_size=1.5/.pt,base_rect_size=1.5/.pt) +"
+"0","  theme(panel.grid = element_blank())"
+"0","g + geom_bar(fill=""black"")"

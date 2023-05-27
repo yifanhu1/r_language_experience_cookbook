@@ -1,3 +1,4 @@
+fig:unnamed-chunk-10
 前言
 参考内容
 base包及函数
@@ -11,3 +12,7 @@ theme_bw主题修改
 图片字体大小-线条粗细-图片保存技巧
 参考
 包版本
+ggplot
+barplot
+github-repo-rstudiobookdown-demo
+fig:unnamed-chunk-2

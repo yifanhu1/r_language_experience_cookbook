@@ -1,0 +1,1 @@
+"0","g + geom_bar(aes(fill=class)) + guides(fill=""none"") + scale_fill_d3()"
