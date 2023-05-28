@@ -1,6 +1,4 @@
-fig:unnamed-chunk-10
-前言
-参考内容
+fig:unnamed-chunk-11
 base包及函数
 工作目录设置及导入安装包
 内置的文件读取与保存
@@ -9,10 +7,8 @@ ggplot作图字体及线条单位
 theme_grey默认参数
 theme_bw默认参数
 theme_bw主题修改
-图片字体大小-线条粗细-图片保存技巧
+figure-保存技巧
 参考
 包版本
 ggplot
 barplot
-github-repo-rstudiobookdown-demo
-fig:unnamed-chunk-2
